@@ -1,0 +1,20 @@
+{
+  "name": "nesthistory",
+  "version": "1.0.0",
+  "description": "Very simple AWS Lambda function that uses the Nest API to collect temperature data from Nest thermostats and store it in DynamoDB.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/juanqui/lambda-nest-history.git"
+  },
+  "author": "Juan Villa",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.4.4",
+    "axios": "^0.12.0",
+    "config": "^1.21.0"
+  }
+}
