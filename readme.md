@@ -59,54 +59,54 @@ This is a very simple [AWS Lambda](https://aws.amazon.com/lambda/) function that
 
 4. Create a new IAM Role (with Lambda trust) with the following policy document (used to give Lambda permission to log, s3, and dynamo)
 
-	```javascript
-	{
-	    "Version": "2012-10-17",
-	    "Statement": [
-	        {
-	            "Effect": "Allow",
-	            "Action": [
-	                "dynamodb:PutItem"
-	            ],
-	            "Resource": [
-	                "arn:aws:dynamodb:us-east-1:<account_number>:table/<table_name>"
-	            ]
-	        },
-	        {
-	            "Effect": "Allow",
-	            "Action": [
-	                "s3:DeleteObject",
-	                "s3:GetObject",
-	                "s3:PutObject"
-	            ],
-	            "Resource": [
-	                "arn:aws:s3:::<bucket_Name>/auth_cache"
-	            ]
-	        },
-	        {
-	            "Effect": "Allow",
-	            "Action": [
-	                "logs:*"
-	            ],
-	            "Resource": [
-	                "*"
-	            ]
-	        }
-	    ]
-	}
-	```
+  ```javascript
+  {
+      "Version": "2012-10-17",
+      "Statement": [
+          {
+              "Effect": "Allow",
+              "Action": [
+                  "dynamodb:PutItem"
+              ],
+              "Resource": [
+                  "arn:aws:dynamodb:us-east-1:<account_number>:table/<table_name>"
+              ]
+          },
+          {
+              "Effect": "Allow",
+              "Action": [
+                  "s3:DeleteObject",
+                  "s3:GetObject",
+                  "s3:PutObject"
+              ],
+              "Resource": [
+                  "arn:aws:s3:::<bucket_Name>/auth_cache"
+              ]
+          },
+          {
+              "Effect": "Allow",
+              "Action": [
+                  "logs:*"
+              ],
+              "Resource": [
+                  "*"
+              ]
+          }
+      ]
+  }
+  ```
 
 5. Create zip file of lambda function (including "node_modules" folder, and javascript files)
 
-	```bash
-	cd nesthistory
-	zip -r nesthistory.zip *
-	```
+  ```bash
+  cd nesthistory
+  zip -r nesthistory.zip *
+  ```
 
 6. Create a new lambda function, upload the zip file you created
-	* NodeJS 4.3 runtime
-	* Set IAM role you created
-	* 128MB
-	* 5 second timeout
+  * NodeJS 4.3 runtime
+  * Set IAM role you created
+  * 128MB
+  * 5 second timeout
 
 7. Schedule the Lambda function execute every 5 to 15 minutes (you can choose whatever you want)

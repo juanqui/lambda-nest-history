@@ -1,11 +1,11 @@
 {
-	"aws": {
-		"region": "us-east-1",
-		"s3_bucket": "xxx-nesthistory",
-		"dynamodb_table": "nest_history"
-	},
-	"nest": {
-		"email": "user@domain.com",
-		"password": "password"
-	}
+  "aws": {
+    "region": "us-east-1",
+    "s3_bucket": "xxx-nesthistory",
+    "dynamodb_table": "nest_history"
+  },
+  "nest": {
+    "email": "user@domain.com",
+    "password": "password"
+  }
 }
